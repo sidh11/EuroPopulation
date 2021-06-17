@@ -1,0 +1,14 @@
+DROP DATABASE IF EXISTS ep;
+CREATE DATABASE IF NOT EXISTS ep;
+USE ep;
+
+Drop table if exists countries;
+Create table countries(
+id INTEGER NOT NULL,
+Cname varchar(10) not null,
+Cpopulation float(5) NOT NULL,
+primary key (id)
+);
+Insert Into countries VALUES (1,"France","2.5");
+
+select * from countries;
