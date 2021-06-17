@@ -3,7 +3,7 @@ package com.Ep.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+//Singleton class
 public class DBconnect {
 
 	private static DBconnect single;
