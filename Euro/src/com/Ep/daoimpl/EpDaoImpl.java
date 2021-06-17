@@ -11,6 +11,7 @@ import java.util.List;
 import com.Ep.bean.EP;
 import com.Ep.dao.EPDao;
 import com.Ep.util.ConnectionManager;
+import com.Ep.util.DBconnect;
 
 public class EpDaoImpl implements EPDao {
 	String except;
@@ -18,7 +19,7 @@ public class EpDaoImpl implements EPDao {
 	@Override
 	public EP findById(int id) {
 		EP ep = null;
-		Connection conn = ConnectionManager.getConnection();
+		Connection conn = DBconnect.getInstance().getConnection();
 		String strSQL = "Select * from countries where id = ?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(strSQL);
@@ -47,7 +48,7 @@ public class EpDaoImpl implements EPDao {
 	@Override
 	public EP findByName(String Cname) {
 		EP ep = null;
-		Connection conn = ConnectionManager.getConnection();
+		Connection conn = DBconnect.getInstance().getConnection();
 		String strSQL = "Select * from countries where Name = ?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(strSQL);
@@ -77,7 +78,7 @@ public class EpDaoImpl implements EPDao {
 	@Override
 	public List<EP> findAll() {
 		List<EP> europ = new ArrayList<>();
-		Connection conn = ConnectionManager.getConnection();
+		Connection conn = DBconnect.getInstance().getConnection();
 		String strSQL = "select * from countries";
 		try {
 			Statement stmt = conn.createStatement();
@@ -101,7 +102,7 @@ public class EpDaoImpl implements EPDao {
 	@Override
 	public int update(EP ep) {
 		int count = 0;
-		Connection conn = ConnectionManager.getConnection();
+		Connection conn = DBconnect.getInstance().getConnection();
 		String strSQL = "update countries set Cname=?, Cpopulation=? WHERE id=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(strSQL);
@@ -123,7 +124,7 @@ public class EpDaoImpl implements EPDao {
 	@Override
 	public int addEP(EP ep) {
 		int count = 0;
-		Connection conn = ConnectionManager.getConnection();
+		Connection conn = DBconnect.getInstance().getConnection();
 		String strSQL = "insert into countries (id, Cname, Cpopulation)" + "Values(?,?,?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(strSQL);
@@ -145,7 +146,7 @@ public class EpDaoImpl implements EPDao {
 	@Override
 	public int delByID(int id) {
 		int count = 0;
-		Connection conn = ConnectionManager.getConnection();
+		Connection conn = DBconnect.getInstance().getConnection();
 		String strSQL = "delete from Countries where id=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(strSQL);
@@ -165,7 +166,7 @@ public class EpDaoImpl implements EPDao {
 	@Override
 	public int delByName(String Cname) {
 		int count = 0;
-		Connection conn = ConnectionManager.getConnection();
+		Connection conn = DBconnect.getInstance().getConnection();
 		String strSQL = "delete from Countries where CName=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(strSQL);
