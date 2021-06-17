@@ -33,15 +33,12 @@ public class EpDaoImpl implements EPDao {
 			}
 			pstmt.close();
 			rs.close();
-		}
-
-		catch (SQLException except) {
+		} catch (SQLException except) {
 			// TODO Auto-generated catch block
 			except.printStackTrace();
 		} finally {
 			ConnectionManager.closeConnection(conn);
 		}
-
 		return ep;
 	}
 
@@ -62,17 +59,13 @@ public class EpDaoImpl implements EPDao {
 			}
 			pstmt.close();
 			rs.close();
-		}
-
-		catch (SQLException except) {
+		} catch (SQLException except) {
 			// TODO Auto-generated catch block
 			except.printStackTrace();
 		} finally {
 			ConnectionManager.closeConnection(conn);
 		}
-
 		return ep;
-
 	}
 
 	@Override
@@ -88,9 +81,7 @@ public class EpDaoImpl implements EPDao {
 			}
 			stmt.close();
 			rs.close();
-		}
-
-		catch (SQLException except) {
+		} catch (SQLException except) {
 			// TODO Auto-generated catch block
 			except.printStackTrace();
 		} finally {
@@ -113,11 +104,9 @@ public class EpDaoImpl implements EPDao {
 			pstmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-
 		} finally {
 			ConnectionManager.closeConnection(conn);
 		}
-		// TODO Auto-generated method stub
 		return count;
 	}
 
@@ -135,7 +124,6 @@ public class EpDaoImpl implements EPDao {
 			pstmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-
 		} finally {
 			ConnectionManager.closeConnection(conn);
 		}
@@ -159,7 +147,6 @@ public class EpDaoImpl implements EPDao {
 		} finally {
 			ConnectionManager.closeConnection(conn);
 		}
-
 		return count;
 	}
 

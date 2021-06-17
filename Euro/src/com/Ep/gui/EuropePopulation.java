@@ -109,7 +109,6 @@ public class EuropePopulation {
 				ep.getCname();
 				dd.delByName(Name);
 				JOptionPane.showMessageDialog(null, "deleted success fully");
-
 			}
 		});
 		btnNewButton_3.setBounds(394, 348, 89, 23);
@@ -152,12 +151,11 @@ public class EuropePopulation {
 	}
 
 	public static void viewTable() {
-		 model = (DefaultTableModel) table.getModel();
+		model = (DefaultTableModel) table.getModel();
 		model.setRowCount(0);
 		List<EP> ep = dd.findAll();
 		for (EP ep2 : ep) {
 			Object[] dataTable = { ep2.getId(), ep2.getCname(), ep2.getCpopulation() };
-			System.out.print("" + ep2.getId());
 			model.addRow(dataTable);
 		}
 	}
